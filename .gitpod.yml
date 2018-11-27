@@ -1,3 +1,6 @@
-image: Dockerfile
+image:
+    file: gitpod.Dockerfile
 ports:
 - port: 80
+tasks:
+- command: yarn
