@@ -9,6 +9,7 @@ RUN apt-get update \
     && sed -i "s/DocumentRoot \/var\/www\/html/DocumentRoot \/workspace/g" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf \
     && sed -i "s/www-data/gitpod/g" /etc/apache2/envvars \
     && mkdir -p /var/log/apache2 \
+    && chown -R gitpod:gitpod /var/log/apache2 \
     && mkdir -p /var/run/apache2 \
-    # && chown -R gitpod:gitpod /var/log/apache2 \
+    && chown -R gitpod:gitpod /var/run/apache2 \
     && usermod -a -G adm gitpod
